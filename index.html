@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ejercicio 1 - Estados de la petición AJAX</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="code.js"></script>
+</head>
+<body>
+  <form action="#">
+    URL:
+    <input type="text" id="recurso" size="70" value="cd_catalog.xml" />
+    <input type="button" id="enviar" value="Mostrar contenidos" />
+  </form>
+  
+  <script>
+  document.getElementById("enviar").addEventListener("click", enviar);
+  document.getElementById("enviar2").addEventListener("click", enviar2);
+  
+  function enviar(){
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function (){
+		if (this.readyState == 4 && this.status == 200) {
+		cargarXML(this);
+		}
+	};
+	xhr.open("GET","cd_catalog.xml",true);
+	xhr.send();
+  }
+  
+  function enviar2(){
+ 
+const url = 'http://localhost/ajax/index.html'
+const http = new XMLHttpRequest()
+
+	
+	http.onreadystatechange = function(){
+
+		if(this.readyState == 4 && this.status == 200){
+			cargarCabeceras(this);
+		}
+	};
+	http.open("GET",url,true);
+	http.send();
+  }
+  
+  // Imprime los resultados en el campo seleccionado
+  
+  function cargarXML(xml){
+	var docXML = xml.responseXML;
+	var tabla = "<tr><th>Artista</th><th>Titulo</th></tr>";
+	var discos = docXML.getElementsByTagName("CD");
+	
+	for (var i = 0; i<discos.length; i++){
+		tabla += "<tr><td>";
+		tabla += discos[i].getElementsByTagName("ARTIST")[0].textContent;
+		tabla += "</td><td>";
+		tabla += discos[i].getElementsByTagName("TITLE")[0].textContent;
+		tabla += "</td></tr>";
+	}
+	 document.getElementById("demo").innerHTML=tabla;
+	 
+  }
+  
+
+  </script>
+
+  <div id="principal">
+    <h2>Contenidos del archivo:</h2>
+    <div id="contenidos">
+	
+	<table id="demo"></table>
+	</div>
+
+</body>
+</html>
