@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ejercicio 1 - Estados de la petición AJAX</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script type="text/javascript">
+  // VER ONLINE LA APLICACION 
+ // https://webcarlosjose.000webhostapp.com/index_rellenarformula.html#
+  function validarFormulario(){
+  //carga los datos en estas variables
+  var campoNombre = document.getElementById('nombre').value;
+  var campoEdad = document.getElementById('edad').value;
+  var campoCorreo = document.getElementById('email').value
+  var campoTlf = document.getElementById('tlf').value
+  
+  // validaciones de javascript
+  if(campoNombre == null || campoNombre.length == 0 || /^\s+$/.test(campoNombre)){
+      alert('ERROR: El campo nombre no debe estar vacío');
+      return false;
+    }
+	
+  
+  if(campoEdad == null || campoEdad.length == 0 || isNaN(campoEdad)){
+      alert('ERROR: Debe ingresar una edad');
+      return false;
+    }
+  
+  if(!(/\S+@\S+\.\S+/.test(campoCorreo))){
+      alert('ERROR: Debe escribir un correo válido');
+      return false;
+    }
+	
+	if(campoTlf == null || campoTlf.length == 0 || isNaN(campoTlf)){
+      alert('ERROR: Debe ingresar un telefono');
+      return false;
+    }
+  
+  }
+  </script>
+</head>
+<body>
+	<div id="general">
+	<center>
+	<h3>Rellenar el formulario</h3>
+		<div id="formulario">
+			 <form action="#" name="formulario" method="POST" onsubmit="return validarFormulario()">
+				<br />
+				<input type="text" id="nombre" placeholder="Inserte su nombre"/>
+				<br />
+				<input type="number" id="edad" placeholder="Inserte su edad" maxlength="2"/>
+				<br />
+				<input type="mail" id="email" placeholder="Inserte su email"/>
+				<br />
+				<input type="number" id="tlf" placeholder="Inserte su telefono"/>
+				<br />
+				
+				<input type="submit" id="enviar" value="Confirmar"/>	
+		</form>
+		</div>
+	</center>	
+	</div>
+
+	</div>
+</body>
+</html>
