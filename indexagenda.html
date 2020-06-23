@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ejercicio agenda </title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script type="text/javascript">
+  // Mostrar y ocultar el boton de nueva cita
+  
+function muestra_oculta(id){
+	if (document.getElementById){ 
+	var oculto = document.getElementById(id); 
+	oculto.style.display = (oculto.style.display == 'none') ? 'block' : 'none'; 
+	}
+}
+window.onload = function(){
+muestra_oculta('contenido2');
+} 
+
+// Cargamos las variables
+function Formulario(){
+ var vardescripcion = document.getElementById('descripciontxt').value;
+ var varfecha = document.getElementById('fecha').value;
+ var varhora = document.getElementById('hora').value;
+ 
+ // Comprobacion de validaciones del formulario 
+  if(vardescripcion == null || vardescripcion.length == 0 || /^\s+$/.test(vardescripcion)){
+      alert('ERROR: El campo de descripcion no debe estar vacío');
+      return false;
+    }
+	
+  if(varfecha == null || varfecha.length == 0){
+      alert('ERROR: El campo de fecha no debe estar vacío');
+      return false;
+    }
+	
+  if(varhora == null || varhora.length == 0){
+      alert('ERROR: El campo de hora no debe estar vacío');
+      return false;
+    } 
+	 var tabla="<tr><td>"+vardescripcion+"</td><td>"+varfecha+"</td><td>"+varhora+"</td><td><input type='checkbox' id='check'/></input></td><td><input class='clasemod' type='submit' value='Modificar' id='mod'></td></tr>";
+	 var muestra = document.createElement("TR");
+	 muestra.innerHTML=tabla;
+	 document.getElementById("contenido").appendChild(muestra);
+	 return false;
+	}
+	
+	// Funcion borrar elementos de la caja de chequeo
+	// 
+function borrar() {
+  ftab = document.getElementById('tabla1');
+  
+  for (c=ftab.getElementsByTagName('input').length-1; i>=0; i--) {
+    chk = ftab.getElementsByTagName('input')[c];
+	
+    if (chk.checked)
+      ftab.removeChild(chk.parentNode.parentNode);
+  }
+}
+	
+  </script>
+  </head>
+  <body>
+  
+  <div id="general">
+		<div id="contenido">
+			<table class="tabla">	
+			<tbody id="tabla1">
+			<tr>
+				<td class="tdclase">Descripcion</td>
+				<td class="tdclase">Fecha</td>
+				<td class="tdclase">Hora</td>
+				<td class="tdclase">Eliminar</td>
+				<td class="tdclase"></td>		
+			</tr>
+			</tbody>
+			</table>
+		</div>
+		<div id="contenido2">
+			
+			<form action="#" name="formulario" method="POST" onsubmit="return Formulario()">
+			
+			<input class="formclase2" id="descripciontxt" type="text" placeholder=" Descripcion"></input>
+			<input class="formclase" id="fecha" type="date"></input>
+			<input class="formclase3" id="hora" type="time" placeholder=" Hora"></input>
+			<input class="formsubmit" type="submit" value="Añadir cita previa"></input>
+			
+			</form>
+		
+		</div>
+		<br/>
+		<br/>
+		<center>
+			<input class="submitclase" type="button" value="Nueva cita" onClick="muestra_oculta('contenido2')"></input>
+			
+			<input class="submitclase" type="button" value="Eliminar" onClick="borrar()"></input>
+		</center>
+  
+  </div>
+  
+  </body>
+  </html>
