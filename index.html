@@ -15,7 +15,6 @@
   
   <script>
   document.getElementById("enviar").addEventListener("click", enviar);
-  document.getElementById("enviar2").addEventListener("click", enviar2);
   
   function enviar(){
 	var xhr = new XMLHttpRequest();
@@ -26,22 +25,6 @@
 	};
 	xhr.open("GET","cd_catalog.xml",true);
 	xhr.send();
-  }
-  
-  function enviar2(){
- 
-const url = 'http://localhost/ajax/index.html'
-const http = new XMLHttpRequest()
-
-	
-	http.onreadystatechange = function(){
-
-		if(this.readyState == 4 && this.status == 200){
-			cargarCabeceras(this);
-		}
-	};
-	http.open("GET",url,true);
-	http.send();
   }
   
   // Imprime los resultados en el campo seleccionado
