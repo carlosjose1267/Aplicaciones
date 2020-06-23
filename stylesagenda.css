@@ -1,0 +1,130 @@
+body{
+	background-color:#9f9f9f;
+}
+
+#general{
+width:1000px;
+height:800px;
+margin:35px auto;
+}
+
+
+#contenido{
+	width:1000px;
+	height:auto;
+	box-shadow:1px 2px 5px #333;
+	border:solid 3px #666;
+	background-color:#f1f1f1;
+}
+
+#contenido2{
+	width:1000px;
+	height:80px;
+	box-shadow:1px 2px 5px #333;
+	border:solid 3px #666;
+	background-color:#f1f1f1;
+}
+
+td{
+	width:200px;
+	height:40px;
+	background-color:#f1f1f1;
+	text-align:center;
+	font-size:15pt;
+	font-family:calibri;
+	
+}
+
+td.tdclase{
+	width:200px;
+	height:40px;
+	background-color:#c9c9c9;
+	text-align:center;
+	font-size:15pt;
+	font-family:calibri;
+	
+}
+
+input.submitclase{
+	width:180px;
+	height:40px;
+	background-color:#f9f9f9;
+	border:solid 0px;
+	font-family:calibri;
+	font-size:15pt;
+	text-align:center;
+	font-weight:bold;
+	color:#111;
+	margin-bottom:30px;
+	
+}
+
+input.submitclase:hover{
+	background-color:#988870;
+}
+
+input.formclase{
+	width:170px;
+	height:30px;
+	border:solid 0px;
+	font-family:calibri;
+	padding:3px;
+	margin-top:20px;
+	margin-left:10px;
+	border:solid 1px #444;
+	font-size:14pt;
+}
+
+input.formclase2{
+	width:320px;
+	height:30px;
+	border:solid 0px;
+	font-family:calibri;
+	padding:3px;
+	margin-top:20px;
+	margin-left:10px;
+	border:solid 1px #444;
+	font-size:14pt;
+}
+
+input.formclase3{
+	width:150px;
+	height:30px;
+	border:solid 0px;
+	font-family:calibri;
+	padding:3px;
+	margin-top:20px;
+	margin-left:10px;
+	border:solid 1px #444;
+	font-size:14pt;
+}
+
+input.formsubmit{
+	width:190px;
+	height:30px;
+	margin-left:10px;
+	background-color:#989899;
+	border:solid 0px;
+	font-family:calibri;
+	font-size:15pt;
+	text-align:center;
+	font-weight:bold;
+	color:#111;
+}
+
+
+input.formsubmit:hover{
+	background-color:#988870;
+}
+
+
+input.clasemod{
+	width:150px;
+	height:30px;
+	text-align:center;
+	padding:3px;
+}
+
+
+
+
