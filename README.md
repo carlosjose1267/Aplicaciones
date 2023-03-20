@@ -11,5 +11,4 @@
 * [Ajax XML](https://github.com/carlosjose1267/Aplicaciones/blob/master/cd_catalog.xml)
 * [Agenda HTML](https://github.com/carlosjose1267/Aplicaciones/blob/master/indexagenda.html)
 * [Agenda CSS](https://github.com/carlosjose1267/Aplicaciones/blob/master/stylesagenda.css)
-* [WordPress](https://github.com/carlosjose1267/Aplicaciones/blob/master/.sql)
 * [Ruby on rails](https://github.com/carlosjose1267/Aplicaciones/blob/master/ruby_on_rails.md)
